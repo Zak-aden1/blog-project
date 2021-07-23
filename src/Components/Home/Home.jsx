@@ -28,8 +28,8 @@ const Home = () => {
   },[])
     return (
         <div className={styles.home}>
-            <BlogList blogs={blogs} handleDelete={handleDelete}/>
-            <BlogList blogs={blogs.filter((blog) => blog.author.includes('yoshi'))} />
+            { blogs && <BlogList blogs={blogs} handleDelete={handleDelete}/> }
+            {/* <BlogList blogs={blogs.filter((blog) => blog.author.includes('yoshi'))} /> */}
         </div>
     )
 }
