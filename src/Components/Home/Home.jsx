@@ -3,32 +3,23 @@ import styles from './Home.module.scss'
 import { useState } from 'react'
 import BlogList from '../BlogList'
 import { useEffect } from 'react'
+import useFetch from '../../useFetch'
+
 
 const Home = () => {
-    const [blogs, setBlogs] =useState(null)
+    const {data, ispending, error} = useFetch('http://localhost:8000/blogs')
 
 
-  const handleDelete = (id) => {
-    const newBlog = blogs.filter((blog) => blog.id != id)
-    setBlogs(newBlog)
+  const handleSubmit = (id) => {
+      
   }
 
-  useEffect((e) => {
-      fetch('http://localhost:8000/blogs')
-      .then(res => { 
-          return res.json()
-        })
-      .then(data => {
-          console.log(data)
-          setBlogs(data)
-        })
-      .catch(err => {
-          alert('error')
-        })
-  },[])
+  
     return (
         <div className={styles.home}>
-            { blogs && <BlogList blogs={blogs} handleDelete={handleDelete}/> }
+            {ispending && <div>loading...</div>}
+            {error && <div> {error} </div>}
+            { data && <BlogList blogs={data} handleSubmit={handleSubmit}/> }
             {/* <BlogList blogs={blogs.filter((blog) => blog.author.includes('yoshi'))} /> */}
         </div>
     )

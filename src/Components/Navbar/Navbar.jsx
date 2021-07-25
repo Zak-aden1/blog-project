@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Navbar.module.scss'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -7,8 +8,8 @@ const Navbar = () => {
             <nav className={styles.navbar}>
                 <h1>The Dojo Blog</h1>
                 <div className={styles.links}>
-                    <a href="/">Home</a>
-                    <a href="/create">New Blog</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/create'>New Blog</Link>
                 </div>
             </nav>
 
