@@ -24,7 +24,6 @@ const Create = () => {
         .then(res => {
             setAdding(false)
             history.push('/')
-            
         })
     }
     return (
