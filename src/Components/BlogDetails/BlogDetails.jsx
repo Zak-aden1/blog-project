@@ -7,11 +7,11 @@ import { useHistory } from 'react-router'
 const BlogDetails = () => {
     const history = useHistory()
     const {id} = useParams()
-    const {data: blog, error, ispending} = useFetch('http://localhost:8000/blogs/' +id)
+    const {data: blog, error, ispending} = useFetch('https://my-dojo-api.herokuapp.com/blogs/' +id)
     console.log(blog);
 
     const handleDelete = (e) => {
-        fetch('http://localhost:8000/blogs/' + id,  {
+        fetch('https://my-dojo-api.herokuapp.com/blogs/' + id,  {
             method: 'Delete'
         })
         .then(() => history.push('/'))

@@ -7,7 +7,7 @@ import useFetch from '../../useFetch'
 
 
 const Home = () => {
-    const {data, ispending, error} = useFetch('http://localhost:8000/blogs')
+    const {data, ispending, error} = useFetch('https://my-dojo-api.herokuapp.com/blogs')
 
 
   const handleSubmit = (id) => {
