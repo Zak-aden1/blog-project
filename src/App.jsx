@@ -10,26 +10,22 @@ const App = () => {
     <Router>
       <Navbar />
       <Switch>
-      <div class='content'>
-
-      <Route exact path='/'>
-      <Home />
-      </Route>
-
-      <Route path='/create'>
-        <Create />
-      </Route>
-
-      <Route path='/blogs/:id'>
-        <BlogDetails />
-      </Route>
-
-      <Route path='*'>
-        <NotFound />
-      </Route>
-
-      </div>
-      </Switch>
+        <div class='content'>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+          <Route path="/blogs/:id">
+            <BlogDetails />
+          </Route>
+          </div>
+          <Route path="*">
+           <NotFound />
+          </Route>
+          
+        </Switch>
     </Router>
   );
 }

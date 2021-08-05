@@ -38,8 +38,8 @@ const Create = () => {
 
                 <label>Blog Author</label>
                 <select value={author} onChange={(e) => setAuthor(e.target.value)}>
-                    <option value="mario">mario</option>
-                    <option value="yoshi">yoshi</option>
+                    <option value="Sam">Sam</option>
+                    <option value="Ash">Ash</option>
                 </select>
                 {!adding && <button>Add Blog</button>}
                 {adding && <button>Adding.....</button>}
